@@ -70,7 +70,7 @@ def links_books_extraction(books_soup):
 
 # liste des informations demandées servant d'en-tête
 en_tete = ["product_page_url",
-           "universal_product code (upc)",
+           "universal_product_code_(upc)",
            "title",
            "price_including_tax",
            "price_excluding_tax",
@@ -106,8 +106,8 @@ for category in categories:
     # Récupération du nom de la catégorie
     category_name = soup_list[0].find("div", class_="page-header action").find("h1").text
     # Création d'un dossier pour la catégorie actuelle
-    Path(f".\\{category_name}").mkdir()
-    category_repertory = ".\\" + category_name + "\\"
+    Path(f"./{category_name}").mkdir()
+    category_repertory = "./" + category_name + "/"
     category_csv = category_repertory + category_name + ".csv"
     print(f"Extraction des données de la catégorie: {Path(category_csv).stem}")
     # Création du fichier .csv de la catégorie actuelle et écriture de la ligne d'en-tête
