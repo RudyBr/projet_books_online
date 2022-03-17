@@ -9,7 +9,7 @@ Ce script crée un dossier par catégorie de livre présent sur le site http://b
 
 **Informations contenues par le fichier .csv:**
 - product_page_url
-- universal_ product_code (upc)
+- universal_product_code (upc)
 - title
 - price_including_tax
 - price_excluding_tax
