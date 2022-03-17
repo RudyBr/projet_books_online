@@ -70,7 +70,7 @@ def links_books_extraction(books_soup):
 
 # liste des informations demandées servant d'en-tête
 en_tete = ["product_page_url",
-           "universal_product_code (upc)",
+           "universal_product_code_(upc)",
            "title",
            "price_including_tax",
            "price_excluding_tax",
@@ -85,6 +85,7 @@ all_category_response = requests.get(site_url)
 all_category_soup = BeautifulSoup(all_category_response.content, "html.parser")
 # création d'une liste afin de récupérer chaque suffixe de chaque page de catégorie
 categories = all_category_soup.findAll("a", href=re.compile("catalogue/category/books/"))
+Path("./Extraction").mkdir()
 # récupération du nombre de catégories pour itérer dessus
 for category in categories:
 
@@ -106,9 +107,10 @@ for category in categories:
     # Récupération du nom de la catégorie
     category_name = soup_list[0].find("div", class_="page-header action").find("h1").text
     # Création d'un dossier pour la catégorie actuelle
-    Path(f"./{category_name}").mkdir()
-    category_repertory = "./" + category_name + "/"
+    Path(f"./Extraction/{category_name}").mkdir()
+    category_repertory = "./Extraction/" + category_name + "/"
     category_csv = category_repertory + category_name + ".csv"
+    print(category_csv)
     print(f"Extraction des données de la catégorie: {Path(category_csv).stem}")
     # Création du fichier .csv de la catégorie actuelle et écriture de la ligne d'en-tête
     fichier_csv = Path(category_csv)
