@@ -70,7 +70,7 @@ def links_books_extraction(books_soup):
 
 # liste des informations demandées servant d'en-tête
 en_tete = ["product_page_url",
-           "universal_product_code_(upc)",
+           "universal_product_code (upc)",
            "title",
            "price_including_tax",
            "price_excluding_tax",
