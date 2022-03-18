@@ -5,7 +5,9 @@ Fichier : P2_01_codesource.py
 
 Script développé avec Python 3.9.
 
-Ce script crée un dossier par catégorie de livre présent sur le site http://books.toscrape.com/. Ils contiendront un fichier .csv répertoriant les informations importantes des livres, ainsi que les images des couvertures de ces derniers au format .jpg. 
+Ce sript permet d'extraire les données des livres du site http://books.toscrape.com/ pour les inscrire dans un fichier .csv. 
+Il permet par ailleurs de récupérer les images des couvertures au format .jpg.
+Ces fichiers seront organisés dans des dossiers nommés par catégorie. Ces derniers seront réunis dans le dossier Extraction généré par le script.
 
 **Informations contenues par le fichier .csv:**
 - product_page_url
